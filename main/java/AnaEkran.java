@@ -25,28 +25,28 @@ public class AnaEkran extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnUrunIslemleri = new javax.swing.JButton();
+        btnStokTakip = new javax.swing.JButton();
+        btnRaporlama = new javax.swing.JButton();
+        btnCikis = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Ürün İşlemleri");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnUrunIslemleri.setText("Ürün İşlemleri");
+        btnUrunIslemleri.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnUrunIslemleriActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Stok Takip");
+        btnStokTakip.setText("Stok Takip");
 
-        jButton3.setText("Raporlama");
+        btnRaporlama.setText("Raporlama");
 
-        jButton4.setText("Çıkış");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnCikis.setText("Çıkış");
+        btnCikis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnCikisActionPerformed(evt);
             }
         });
 
@@ -57,36 +57,60 @@ public class AnaEkran extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(btnUrunIslemleri)
+                    .addComponent(btnStokTakip)
+                    .addComponent(btnRaporlama)
+                    .addComponent(btnCikis))
                 .addContainerGap(291, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
+                .addComponent(btnUrunIslemleri)
                 .addGap(30, 30, 30)
-                .addComponent(jButton2)
+                .addComponent(btnStokTakip)
                 .addGap(31, 31, 31)
-                .addComponent(jButton3)
+                .addComponent(btnRaporlama)
                 .addGap(31, 31, 31)
-                .addComponent(jButton4)
+                .addComponent(btnCikis)
                 .addContainerGap(114, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    private void btnStokTakip(java.awt.event.ActionEvent evt) {
+        btnStokTakip.addActionListener(new java.awt.event.ActionListener() {
+    public void actionPerformed(java.awt.event.ActionEvent evt) {
+        System.out.println("Stok Takip butonuna tıklandı.");
+        // Buraya stok durumunu gösteren tablo veya grafik eklenebilir
+    }
+});
+    }
+    private void btnRaporlama(java.awt.event.ActionEvent evt) {
+        btnRaporlama.addActionListener(new java.awt.event.ActionListener() {
+    public void actionPerformed(java.awt.event.ActionEvent evt) {
+        System.out.println("Raporlama butonuna tıklandı.");
+        // Buraya satış raporu, stok raporu gibi PDF/Excel çıktıları alınabilir
+    }
+});
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }
+    private void btnCikisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCikisActionPerformed
+    btnCikis.addActionListener(new java.awt.event.ActionListener() {
+    public void actionPerformed(java.awt.event.ActionEvent evt) {
+        System.out.println("Çıkış butonuna tıklandı.");
+        System.exit(0);
+    }
+});    }//GEN-LAST:event_btnCikisActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnUrunIslemleriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUrunIslemleriActionPerformed
+    btnUrunIslemleri.addActionListener(new java.awt.event.ActionListener() {
+    public void actionPerformed(java.awt.event.ActionEvent evt) {
+        System.out.println("Ürün İşlemleri butonuna tıklandı.");
+        // Buraya ürün ekleme, silme veya güncelleme ekranı açılabilir
+    }
+});    }//GEN-LAST:event_btnUrunIslemleriActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,9 +148,9 @@ public class AnaEkran extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnCikis;
+    private javax.swing.JButton btnRaporlama;
+    private javax.swing.JButton btnStokTakip;
+    private javax.swing.JButton btnUrunIslemleri;
     // End of variables declaration//GEN-END:variables
 }
