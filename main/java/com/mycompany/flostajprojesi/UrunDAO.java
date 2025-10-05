@@ -60,4 +60,29 @@ public class UrunDAO {
         }
         return urunListesi;
     }
+    public List<Urun> urunleriAdaGoreAra(String aramaKelimesi) {
+    List<Urun> arananUrunler = new ArrayList<>();
+    // Veritabanı sorgusu, arama kelimesini kullanarak ürün adı filtresi yapar.
+    String query = "SELECT * FROM urunler WHERE urun_adi LIKE ?";
+    try (Connection con = DatabaseConnection.getConnection();
+         PreparedStatement pstmt = con.prepareStatement(query)) {
+        
+        // Arama kelimesini sorguya ekle, % işareti ile esnek arama yap
+        pstmt.setString(1, "%" + aramaKelimesi + "%");
+        ResultSet rs = pstmt.executeQuery();
+
+        while (rs.next()) {
+            Urun urun = new Urun();
+            urun.setUrunId(rs.getInt("urun_id"));
+            urun.setUrunAdi(rs.getString("urun_adi"));
+            urun.setFiyat(rs.getDouble("fiyat"));
+            urun.setStok(rs.getInt("stok"));
+            urun.setKategori(rs.getString("kategori"));
+            arananUrunler.add(urun);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return arananUrunler;
+}
 }

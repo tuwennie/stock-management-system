@@ -40,6 +40,11 @@ public class AnaEkran extends javax.swing.JFrame {
         });
 
         btnStokTakip.setText("Stok Takip");
+        btnStokTakip.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStokTakipActionPerformed(evt);
+            }
+        });
 
         btnRaporlama.setText("Raporlama");
 
@@ -111,6 +116,14 @@ public class AnaEkran extends javax.swing.JFrame {
         // Buraya ürün ekleme, silme veya güncelleme ekranı açılabilir
     }
 });    }//GEN-LAST:event_btnUrunIslemleriActionPerformed
+
+    private void btnStokTakipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStokTakipActionPerformed
+         // Stok Takip ekranını aç
+    StokTakip stokEkrani = new StokTakip();
+    stokEkrani.setVisible(true);
+    // Ana ekranı gizle
+    this.dispose();
+    }//GEN-LAST:event_btnStokTakipActionPerformed
 
     /**
      * @param args the command line arguments
