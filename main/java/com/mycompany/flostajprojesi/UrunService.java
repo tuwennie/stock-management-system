@@ -15,7 +15,17 @@ public class UrunService {
     package com.mycompany.flostajprojesi.service;
 
     private UrunDAO urunDAO;
-
+    
+    public List<Urun> urunleriAdaGoreAra(String aramaKelimesi) {
+    // Bu metot, arama işlemini UrunDAO sınıfına devredecek.
+    return urunDAO.urunleriAdaGoreAra(aramaKelimesi);
+    }
+    
+    public List<Urun> dusukStokluUrunleriGetir() {
+    // Stok eşiğini buradan belirleyebiliriz, örneğin 10
+    return urunDAO.dusukStokluUrunleriGetir(10); 
+    }
+    
     public UrunService() {
         this.urunDAO = new UrunDAO();
     }
@@ -35,7 +45,5 @@ public class UrunService {
     public List<Urun> tumUrunleriGetir() {
         return urunDAO.tumUrunleriGetir();
     }
-    public List<Urun> urunleriAdaGoreAra(String aramaKelimesi) {
-    return urunDAO.urunleriAdaGoreAra(aramaKelimesi);
 }
 

@@ -47,6 +47,11 @@ public class AnaEkran extends javax.swing.JFrame {
         });
 
         btnRaporlama.setText("Raporlama");
+        btnRaporlama.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRaporlamaActionPerformed(evt);
+            }
+        });
 
         btnCikis.setText("Çıkış");
         btnCikis.addActionListener(new java.awt.event.ActionListener() {
@@ -124,6 +129,12 @@ public class AnaEkran extends javax.swing.JFrame {
     // Ana ekranı gizle
     this.dispose();
     }//GEN-LAST:event_btnStokTakipActionPerformed
+
+    private void btnRaporlamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRaporlamaActionPerformed
+    RaporlamaEkrani raporEkrani = new RaporlamaEkrani();
+    raporEkrani.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_btnRaporlamaActionPerformed
 
     /**
      * @param args the command line arguments

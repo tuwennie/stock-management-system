@@ -60,6 +60,31 @@ public class UrunDAO {
         }
         return urunListesi;
     }
+    public List<Urun> dusukStokluUrunleriGetir(int esikDeger) {
+    List<Urun> urunler = new ArrayList<>();
+    String query = "SELECT * FROM urunler WHERE stok < ?"; // Stok alanı 'esikDeger'den küçük olanları çeker
+    
+    try (Connection con = DatabaseConnection.getConnection();
+         PreparedStatement pstmt = con.prepareStatement(query)) {
+        
+        pstmt.setInt(1, esikDeger);
+        ResultSet rs = pstmt.executeQuery();
+
+        while (rs.next()) {
+            Urun urun = new Urun();
+            // ... (urun nesnesini dolduran diğer set metotları)
+            urun.setUrunId(rs.getInt("urun_id"));
+            urun.setUrunAdi(rs.getString("urun_adi"));
+            urun.setFiyat(rs.getDouble("fiyat"));
+            urun.setStok(rs.getInt("stok"));
+            urun.setKategori(rs.getString("kategori"));
+            urunler.add(urun);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return urunler;
+}
     public List<Urun> urunleriAdaGoreAra(String aramaKelimesi) {
     List<Urun> arananUrunler = new ArrayList<>();
     // Veritabanı sorgusu, arama kelimesini kullanarak ürün adı filtresi yapar.
