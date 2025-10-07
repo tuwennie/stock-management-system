@@ -17,12 +17,10 @@ public class UrunService {
     private UrunDAO urunDAO;
     
     public List<Urun> urunleriAdaGoreAra(String aramaKelimesi) {
-    // Bu metot, arama işlemini UrunDAO sınıfına devredecek.
     return urunDAO.urunleriAdaGoreAra(aramaKelimesi);
     }
     
     public List<Urun> dusukStokluUrunleriGetir() {
-    // Stok eşiğini buradan belirleyebiliriz, örneğin 10
     return urunDAO.dusukStokluUrunleriGetir(10); 
     }
     

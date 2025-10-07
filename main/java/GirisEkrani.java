@@ -30,6 +30,7 @@ public class GirisEkrani extends javax.swing.JFrame {
         txtKullaniciAdi = new javax.swing.JTextField();
         txtSifre = new javax.swing.JPasswordField();
         btnGirisYap = new javax.swing.JButton();
+        btnKayitOl = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,6 +54,13 @@ public class GirisEkrani extends javax.swing.JFrame {
             }
         });
 
+        btnKayitOl.setText("Kayıt Ol");
+        btnKayitOl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKayitOlActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -64,10 +72,13 @@ public class GirisEkrani extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(74, 74, 74)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnGirisYap)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnGirisYap)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnKayitOl))
                     .addComponent(txtSifre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtKullaniciAdi, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(193, Short.MAX_VALUE))
+                .addContainerGap(117, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -81,7 +92,9 @@ public class GirisEkrani extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(txtSifre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
-                .addComponent(btnGirisYap)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGirisYap)
+                    .addComponent(btnKayitOl))
                 .addContainerGap(136, Short.MAX_VALUE))
         );
 
@@ -117,6 +130,14 @@ public class GirisEkrani extends javax.swing.JFrame {
     private void txtKullaniciAdiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKullaniciAdiActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtKullaniciAdiActionPerformed
+
+    private void btnKayitOlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKayitOlActionPerformed
+        // Kayıt Ekranını aç
+    KayıtEkrani kayıtEkrani = new KayıtEkrani();
+    kayıtEkrani.setVisible(true);
+    // Mevcut Giriş Ekranını gizle/kapat
+    this.dispose();
+    }//GEN-LAST:event_btnKayitOlActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,6 +176,7 @@ public class GirisEkrani extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGirisYap;
+    private javax.swing.JButton btnKayitOl;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField txtKullaniciAdi;

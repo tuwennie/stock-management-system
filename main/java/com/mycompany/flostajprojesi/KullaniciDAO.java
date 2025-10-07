@@ -38,7 +38,28 @@ public class KullaniciDAO {
         System.err.println("Kullanıcı eklenirken hata oluştu: " + e.getMessage());
     }
 }
+    public boolean kullaniciKaydet(Kullanici kullanici) {
+        // Kullanıcı tablonuzun "kullanicilar" olduğunu varsayıyorum.
+        String sql = "INSERT INTO kullanicilar (ad, soyad, kullanici_adi, sifre) VALUES (?, ?, ?, ?)";
 
+        try (Connection con = DatabaseConnection.getConnection();
+             PreparedStatement pstmt = con.prepareStatement(sql)) {
+
+            pstmt.setString(1, kullanici.getAd());
+            pstmt.setString(2, kullanici.getSoyad());
+            pstmt.setString(3, kullanici.getKullaniciAdi());
+            pstmt.setString(4, kullanici.getSifre()); // Şifre veritabanına düz metin olarak kaydediliyor. Güvenlik için HASH kullanmanız önerilir!
+
+            int affectedRows = pstmt.executeUpdate();
+            return affectedRows > 0; // Bir satır eklendiyse başarılı
+            
+        } catch (SQLException e) {
+            System.err.println("Kullanıcı kaydederken hata oluştu: " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
     public boolean kullaniciKontrol(String kullaniciAdi, String sifre) {
     String sql = "SELECT sifre FROM kullanicilar WHERE kullanici_adi = ?";
     BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();

@@ -92,7 +92,6 @@ public class UrunDAO {
     try (Connection con = DatabaseConnection.getConnection();
          PreparedStatement pstmt = con.prepareStatement(query)) {
         
-        // Arama kelimesini sorguya ekle, % işareti ile esnek arama yap
         pstmt.setString(1, "%" + aramaKelimesi + "%");
         ResultSet rs = pstmt.executeQuery();
 

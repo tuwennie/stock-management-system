@@ -13,8 +13,8 @@ public class KullaniciService {
     private KullaniciDAO kullaniciDAO = new KullaniciDAO();
 
 
-    public void kullaniciKaydet(Kullanici kullanici) {
-        kullaniciDAO.kullaniciEkle(kullanici);
+    public boolean kullaniciKaydet(Kullanici kullanici) {
+        return kullaniciDAO.kullaniciKaydet(kullanici);
     }
 
 
