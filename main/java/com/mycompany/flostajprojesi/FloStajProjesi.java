@@ -6,11 +6,12 @@
 package com.mycompany.flostajprojesi;
 
 /**
- *
- * @author tuba
+ * Projenin ana başlatma sınıfı.
  */
 public class FloStajProjesi {
+
     public static void main(String[] args) {
+        // GUI uygulamaları için standart başlatma şekli
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GirisEkrani().setVisible(true);

@@ -109,7 +109,7 @@ public class KayitEkrani extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnKayitOlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKayitOlActionPerformed
-        String ad = txtAd.getText().trim();
+    String ad = txtAd.getText().trim();
     String soyad = txtSoyad.getText().trim();
     String kullaniciAdi = txtKullaniciAdi.getText().trim();
     String sifre = new String(txtSifre.getPassword()).trim();
@@ -123,9 +123,10 @@ public class KayitEkrani extends javax.swing.JFrame {
     // 2. Kullanici Nesnesini Oluşturma
     Kullanici yeniKullanici = new Kullanici();
     yeniKullanici.setAd(ad);
-    yeniKullanici.setSoyad(soyad);
+    yeniKullanici.setSoyad(soyad); 
     yeniKullanici.setKullaniciAdi(kullaniciAdi);
     yeniKullanici.setSifre(sifre);
+    yeniKullanici.setRol("user"); // Varsayılan rol ataması yapalım
 
     // 3. Servis Çağrısı ve Kayıt İşlemi
     KullaniciService service = new KullaniciService();
@@ -171,7 +172,7 @@ public class KayitEkrani extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        java.awt.EventQueue.invokeLater(new Runnable() {            
             public void run() {
                 new KayitEkrani().setVisible(true);
             }
