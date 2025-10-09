@@ -28,7 +28,7 @@ public class UrunDAO {
             pstmt.setString(5, urun.getKategori());
             pstmt.setString(6, urun.getBeden());
             pstmt.setString(7, urun.getRenk());
-            pstmt.setDouble(8, urun.getFiyat());
+            pstmt.setDouble(8, (double) urun.getFiyat());
             pstmt.executeUpdate();
             System.out.println("Ürün başarıyla eklendi.");
         } catch (SQLException e) {
@@ -81,7 +81,6 @@ public class UrunDAO {
             urunler.add(urun);
         }
     } catch (SQLException e) {
-        e.printStackTrace();
     }
     return urunler;
 }
@@ -109,4 +108,16 @@ public class UrunDAO {
     }
     return arananUrunler;
 }
+
+    void urunGuncelle(Urun urun) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    void urunSil(int urunId) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    List<Urun> tumUrunleriGetir() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

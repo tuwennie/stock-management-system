@@ -4,6 +4,10 @@
  */
 package com.mycompany.flostajprojesi;
 
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author tuba
@@ -141,10 +145,8 @@ public class StokTakip extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new StokTakip().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new StokTakip().setVisible(true);
         });
     }
 
@@ -155,4 +157,14 @@ public class StokTakip extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+    private static class txtAra {
+
+        private static String getText() {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+
+        public txtAra() {
+        }
+    }
 }

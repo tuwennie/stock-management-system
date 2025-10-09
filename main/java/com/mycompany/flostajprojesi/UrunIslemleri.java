@@ -3,10 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.flostajprojesi;
+import java.awt.HeadlessException;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import com.mycompany.flostajprojesi.model.Urun;
-import com.mycompany.flostajprojesi.service.UrunService;
 
 /**
  *
@@ -245,7 +245,7 @@ public class UrunIslemleri extends javax.swing.JFrame {
     } catch (NumberFormatException ex) {
         // Sayısal alanlara harf girilirse hata mesajı göster
         JOptionPane.showMessageDialog(this, "Fiyat ve stok alanlarına geçerli sayılar giriniz.", "Hata", JOptionPane.ERROR_MESSAGE);
-    } catch (Exception ex) {
+    } catch (HeadlessException ex) {
         // Diğer olası hatalar için genel hata mesajı
         JOptionPane.showMessageDialog(this, "Ürün eklenirken bir hata oluştu: " + ex.getMessage(), "Hata", JOptionPane.ERROR_MESSAGE);
     }
@@ -335,7 +335,7 @@ try {
                 // Tabloyu yenilemek için listeleme metodunu çağır
                 btnListeleActionPerformed(null);
                 
-            } catch (Exception ex) {
+            } catch (HeadlessException ex) {
                 JOptionPane.showMessageDialog(this, "Ürün silinirken bir hata oluştu: " + ex.getMessage(), "Hata", JOptionPane.ERROR_MESSAGE);
             }
         }
@@ -368,7 +368,7 @@ try {
         
     } catch (NumberFormatException ex) {
         JOptionPane.showMessageDialog(this, "ID, Fiyat ve stok alanlarına geçerli sayılar giriniz.", "Hata", JOptionPane.ERROR_MESSAGE);
-    } catch (Exception ex) {
+    } catch (HeadlessException ex) {
         JOptionPane.showMessageDialog(this, "Ürün güncellenirken bir hata oluştu: " + ex.getMessage(), "Hata", JOptionPane.ERROR_MESSAGE);
     }
     }//GEN-LAST:event_btnGuncelleActionPerformed
@@ -401,10 +401,8 @@ try {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new UrunIslemleri().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new UrunIslemleri().setVisible(true);
         });
     }
 
@@ -428,4 +426,18 @@ try {
     private javax.swing.JTextField txtStok;
     private javax.swing.JTextField txtUrunAdi;
     // End of variables declaration//GEN-END:variables
+
+    private static class txtUrunId {
+
+        private static void setText(String valueOf) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+
+        private static String getText() {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+
+        public txtUrunId() {
+        }
+    }
 }

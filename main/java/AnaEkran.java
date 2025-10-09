@@ -1,3 +1,7 @@
+
+import com.mycompany.flostajprojesi.RaporlamaEkrani;
+import com.mycompany.flostajprojesi.StokTakip;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -90,20 +94,16 @@ public class AnaEkran extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     private void btnStokTakip(java.awt.event.ActionEvent evt) {
-        btnStokTakip.addActionListener(new java.awt.event.ActionListener() {
-    public void actionPerformed(java.awt.event.ActionEvent evt) {
-        System.out.println("Stok Takip butonuna tıklandı.");
-        // Buraya stok durumunu gösteren tablo veya grafik eklenebilir
-    }
-});
+        btnStokTakip.addActionListener((java.awt.event.ActionEvent evt1) -> {
+            System.out.println("Stok Takip butonuna tıklandı.");
+            // Buraya stok durumunu gösteren tablo veya grafik eklenebilir
+        });
     }
     private void btnRaporlama(java.awt.event.ActionEvent evt) {
-        btnRaporlama.addActionListener(new java.awt.event.ActionListener() {
-    public void actionPerformed(java.awt.event.ActionEvent evt) {
-        System.out.println("Raporlama butonuna tıklandı.");
-        // Buraya satış raporu, stok raporu gibi PDF/Excel çıktıları alınabilir
-    }
-});
+        btnRaporlama.addActionListener((java.awt.event.ActionEvent evt1) -> {
+            System.out.println("Raporlama butonuna tıklandı.");
+            // Buraya satış raporu, stok raporu gibi PDF/Excel çıktıları alınabilir
+        });
 
     }
     private void btnCikisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCikisActionPerformed

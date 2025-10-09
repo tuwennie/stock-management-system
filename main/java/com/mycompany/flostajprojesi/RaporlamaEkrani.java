@@ -4,6 +4,10 @@
  */
 package com.mycompany.flostajprojesi;
 
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author tuba
@@ -208,4 +212,14 @@ private void hataGoster(String mesaj) {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
+    private static class cmbRaporTuru {
+
+        private static Object getSelectedItem() {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+
+        public cmbRaporTuru() {
+        }
+    }
 }

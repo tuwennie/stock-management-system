@@ -13,7 +13,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 
 public class KullaniciDAO {
@@ -79,4 +78,18 @@ public class KullaniciDAO {
     }
     return false;
 }
+
+    private static class BCryptPasswordEncoder {
+
+        public BCryptPasswordEncoder() {
+        }
+
+        private boolean matches(String sifre, String storedHashedPassword) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+
+        private String encode(String sifre) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+    }
 }

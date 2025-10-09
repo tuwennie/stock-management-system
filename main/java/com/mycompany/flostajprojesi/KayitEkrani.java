@@ -4,6 +4,8 @@
  */
 package com.mycompany.flostajprojesi;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author tuba
@@ -190,4 +192,14 @@ public class KayitEkrani extends javax.swing.JFrame {
     private javax.swing.JPasswordField txtSifre;
     private javax.swing.JTextField txtSoyad;
     // End of variables declaration//GEN-END:variables
+
+    private static class GirisEkrani {
+
+        public GirisEkrani() {
+        }
+
+        private void setVisible(boolean b) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+    }
 }

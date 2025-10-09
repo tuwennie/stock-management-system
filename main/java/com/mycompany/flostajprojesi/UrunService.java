@@ -4,17 +4,13 @@
  */
 package com.mycompany.flostajprojesi;
 
-import com.mycompany.flostajprojesi.dao.UrunDAO;
-import com.mycompany.flostajprojesi.model.Urun;
 import java.util.List;
 /**
  *
  * @author tuba
  */
 public class UrunService {
-    package com.mycompany.flostajprojesi.service;
-
-    private UrunDAO urunDAO;
+    private final UrunDAO urunDAO;
     
     public List<Urun> urunleriAdaGoreAra(String aramaKelimesi) {
     return urunDAO.urunleriAdaGoreAra(aramaKelimesi);

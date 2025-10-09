@@ -8,17 +8,12 @@ package com.mycompany.flostajprojesi;
  *
  * @author tuba
  */
-import com.mycompany.flostajprojesi.IslemDAO;
-import com.mycompany.flostajprojesi.StokDAO;
-import com.mycompany.flostajprojesi.Islem;
-import com.mycompany.flostajprojesi.Stok;
 import javax.swing.JOptionPane;
-import java.util.List;
 
 public class IslemService {
     
-    private IslemDAO islemDAO = new IslemDAO();
-    private StokDAO stokDAO = new StokDAO();
+    private final IslemDAO islemDAO = new IslemDAO();
+    private final StokDAO stokDAO = new StokDAO();
 
     public boolean satisYap(int urunId, int magazaId, int adet, int kullaniciId) {
         
